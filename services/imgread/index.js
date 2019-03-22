@@ -3,7 +3,49 @@ const Mock = require('mockjs')
 const { checkTemplate, checkHistory, entryList } = require('./template')
 
 module.exports = function (fastify, opts, next) {
-  fastify.get('/remote-check-list', function (request, reply) {
+  fastify.get('/remote-check-list', {
+    schema: {
+      description: '远程阅片列表',
+      tags: ['check'],
+      summary: 'qwerty',
+      params: {
+        type: 'object',
+        properties: {
+          page: {
+            type: 'string',
+            description: 'page'
+          },
+          rows: {
+            type: 'string',
+            description: 'rows'
+          }
+        }
+      },
+      response: {
+        200: {
+          description: 'success',
+          type: 'object',
+          properties: {
+            data: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  siteId: {type: 'number'},
+                  siteName: {type: 'string'},
+                  cityName: {type: 'string'},
+                  checkType: {type: 'string'},
+                  checkTypeId: {type: 'string'},
+                  usedNum: {type: 'string'},
+                  status: {type: 'string'}
+                }
+              }
+            } 
+          }
+        }
+      }
+    }
+  }, function (request, reply) {
     let page = parseInt(request.query.page || 1);
     let rows = parseInt(request.query.rows || 10);
     let totalPage = 3;  // 总共的页数
