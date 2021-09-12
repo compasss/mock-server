@@ -3,11 +3,11 @@
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
 
-module.exports = function (fastify, opts, next) {
+module.exports = async function (fastify, opts) {
   // Place here your custom code!
-
   fastify.register(require('fastify-cors'), {
-    origin: true
+    origin: true,
+    credentials: true
   })
 
   // swagger-ui
@@ -52,14 +52,11 @@ module.exports = function (fastify, opts, next) {
     options: Object.assign({}, opts)
   })
 
-  // This loads all plugins defined in services
+  // This loads all plugins defined in routes
   // define your routes in one of these
   opts.prefix = '/mock-api';
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'services'),
-    options: Object.assign({}, opts),
+    dir: path.join(__dirname, 'routes'),
+    options: Object.assign({}, opts)
   })
-
-  // Make sure to call next when done
-  next()
 }

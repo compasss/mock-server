@@ -2,7 +2,7 @@
 const Mock = require('mockjs')
 const { checkTemplate, checkHistory, entryList } = require('./template')
 
-module.exports = function (fastify, opts, next) {
+module.exports = async function (fastify, opts) {
   fastify.get('/remote-check-list', {
     schema: {
       description: '远程阅片列表',
@@ -93,8 +93,6 @@ module.exports = function (fastify, opts, next) {
     let data = Mock.mock(template)
     reply.send(data)
   })
-
-  next()
 }
 
 module.exports.autoPrefix = '/imgread'
