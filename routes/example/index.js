@@ -18,7 +18,7 @@ module.exports = function (fastify, opts, next) {
         'busiInfo': {
           'id|+1': 1,
           'tradeId': /\d{20}/,
-          'hospitalName': '贵阳爱尔'
+          'hospitalName': '医院名称'
         }
       }]
     })

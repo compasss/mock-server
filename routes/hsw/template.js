@@ -9,7 +9,7 @@ module.exports.roadList = {
   'uuid': '@guid',
   'code|+1': 1,
   'name': '@csentence(3, 5)',
-  'enable': true
+  'enable': '@boolean'
 }
 
 module.exports.nodeList = {
@@ -20,7 +20,7 @@ module.exports.nodeList = {
   'latitudeAmap|28-29.5': '12',
   'stakeNo': '桩号',
   'roadName': '@csentence(3, 5)',
-  'enabled': true
+  'enabled': '@boolean'
 }
 
 module.exports.segList = {
@@ -31,7 +31,7 @@ module.exports.segList = {
   'kilo': '里程',
   'segTypeCode': 'fefe',
   'laneNum': '@range(3, 7)',
-  'enabled': true
+  'enabled': '@boolean'
 }
 
 module.exports.deviceList = {
@@ -41,9 +41,9 @@ module.exports.deviceList = {
   'ioTypeCode': '2.00',
   'location': '位置',
   'direction': 'west',
-  'ip': '@ip()',
+  'ip': '@ip',
   'port': '9000',
   'user': '@string(5)',
   'password': 'string(5)',
-  'enabled': true
+  'enabled': '@boolean'
 }
