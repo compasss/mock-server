@@ -16,8 +16,8 @@ module.exports.nodeList = {
   'uuid|+1': 1,
   'code|+1': 1,
   'name': '@csentence(3, 5)',
-  'longitudeAmap|100-116.4-5': 1,
-  'latitudeAmap|28-29.4.5': 1,
+  'longitudeAmap|100-116.6': 1,
+  'latitudeAmap|28-29.6': 1,
   'stakeNo': '桩号',
   'roadName': '@csentence(3, 5)',
   'enabled': '@boolean'
