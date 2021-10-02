@@ -1,7 +1,7 @@
 module.exports.manageTypeList = {
   'uuid|+1': 1,
   'reason': '@csentence(5, 15)',
-  'detail': 'cparagraph(3, 5)',
+  'detail': '@cparagraph(3, 5)',
   'opTime': '@date("yyyy-MM-dd HH:mm:ss")'
 }
 
